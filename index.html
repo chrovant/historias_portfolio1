@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Archivo | Historias Inmersivas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Outfit:wght@200;300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Noise Texture Overlay -->
+    <div class="noise-overlay"></div>
+
+    <main class="app-container">
+        <!-- Floating Toggle Button -->
+        <button id="mode-toggle" class="mode-toggle glass-button">
+            <span class="toggle-text">Ver Galería Completa</span>
+        </button>
+
+        <!-- VIEW: QUIZ & RESULTS -->
+        <section id="quiz-view" class="view-section active">
+
+            <!-- Step 1: Time -->
+            <div id="step-time" class="quiz-step active">
+                <h1 class="fade-in-up">El tiempo es un recurso finito...<br><span class="accent-text">¿De cuánto
+                        dispones hoy?</span></h1>
+                <div class="options-grid fade-in-up delay-1" style="grid-template-columns: repeat(2, 1fr);">
+                    <button class="option-card glass-panel" data-time="short">
+                        <h3>Solo un suspiro</h3>
+                        <p>&lt; 15 minutos</p>
+                    </button>
+                    <button class="option-card glass-panel" data-time="long">
+                        <h3>Una pausa larga</h3>
+                        <p>30+ minutos</p>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 2: Mood (Short Path) -->
+            <div id="step-mood-short" class="quiz-step">
+                <h2 class="fade-in-up">Tu mente busca...<br><span class="accent-text">¿Qué camino tomar?</span></h2>
+                <div class="options-grid fade-in-up delay-1">
+                    <button class="option-card glass-panel" data-mood="logic">
+                        <h3>Lógica</h3>
+                        <p>Filosofía y técnica</p>
+                    </button>
+                    <button class="option-card glass-panel" data-mood="nice">
+                        <h3>Algo Lindo</h3>
+                        <p>Para sanar el corazón</p>
+                    </button>
+                    <button class="option-card glass-panel" data-mood="abyss">
+                        <h3>El Abismo</h3>
+                        <p>La oscuridad que nadie quiere ver</p>
+                    </button>
+                </div>
+                <button class="glass-button back-btn fade-in-up delay-2" onclick="goBack('time')">← Volver</button>
+            </div>
+
+            <!-- Step 2: Mood (Long Path) -->
+            <div id="step-mood-long" class="quiz-step">
+                <h2 class="fade-in-up">Tu alma necesita...<br><span class="accent-text">¿Dónde quieres
+                        refugiarte?</span></h2>
+                <div class="options-grid fade-in-up delay-1">
+                    <button class="option-card glass-panel" data-mood="logic">
+                        <h3>Lógica</h3>
+                        <p>Filosofía y técnica</p>
+                    </button>
+                    <button class="option-card glass-panel" data-mood="nice">
+                        <h3>Algo Lindo</h3>
+                        <p>Para sanar el corazón</p>
+                    </button>
+                    <button class="option-card glass-panel" data-mood="abyss">
+                        <h3>El Abismo</h3>
+                        <p>La oscuridad que nadie quiere ver</p>
+                    </button>
+                </div>
+                <button class="glass-button back-btn fade-in-up delay-2" onclick="goBack('time')">← Volver</button>
+            </div>
+
+            <!-- Step 3: Results -->
+            <div id="step-results" class="quiz-step">
+                <div class="results-header fade-in-up">
+                    <h2>Tus Lecturas Destinadas</h2>
+                    <p id="result-message">Basado en tu elección...</p>
+                    <button class="restart-btn" onclick="restartQuiz()">Reiniciar Ritual ↻</button>
+                </div>
+                <div id="results-grid" class="stories-grid fade-in-up delay-1">
+                    <!-- Stories will be injected here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- VIEW: FULL GALLERY -->
+        <section id="gallery-view" class="view-section">
+            <header class="profile-header glass-panel fade-in-up">
+                <div class="profile-content">
+                    <div class="profile-img">
+                        <!-- Placeholder avatar -->
+                        <div class="avatar-placeholder"></div>
+                    </div>
+                    <div class="profile-info">
+                        <h1>El Arquitecto</h1>
+                        <p class="bio">"No escribo para que leas, escribo para que sientas. Bienvenido al archivo de mis
+                            mundos."</p>
+                    </div>
+                </div>
+            </header>
+
+            <div id="gallery-grid" class="stories-grid fade-in-up delay-1">
+                <!-- All Stories will be injected here -->
+            </div>
+        </section>
+
+    </main>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
